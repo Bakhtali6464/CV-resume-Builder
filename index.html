@@ -59,6 +59,85 @@
       max-width: 100%;
       margin: 0 auto;
     }
+    /* WhatsApp Contact Section */
+    .whatsapp-contact {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-left: 4px solid var(--whatsapp);
+    }
+
+    .whatsapp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+
+    .whatsapp-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-title i {
+      color: var(--whatsapp);
+      font-size: 1.1rem;
+    }
+
+    .whatsapp-number {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 0.5rem 0.75rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-actions {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .whatsapp-btn {
+      flex: 1;
+      background: var(--whatsapp);
+      color: var(--white);
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.875rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .whatsapp-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+    }
+
+    .whatsapp-btn i {
+      font-size: 1.1rem;
+    }
+
+    .whatsapp-btn-call {
+      background: #075E54;
+    }
+
+    .whatsapp-btn-call:hover {
+      background: #054d44;
+    }
 
     /* Header */
     .header {
@@ -539,7 +618,37 @@
         height: calc(100% - 120px);
       }
     }
-
+ /* Mobile Optimizations */
+    @media (max-width: 360px) {
+      .header h1 {
+        font-size: 1.2rem;
+      }
+      
+      .whatsapp-number {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+      }
+      
+      .whatsapp-btn {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.8rem;
+      }
+      
+      .section {
+        padding: 1rem;
+      }
+      
+      input, textarea, select {
+        padding: 0.75rem;
+        font-size: 16px;
+      }
+      
+      .photo-placeholder,
+      .photo-preview {
+        width: 120px;
+        height: 120px;
+      }
+    }
     /* Tablet */
     @media (min-width: 768px) {
       .app-container {
@@ -594,6 +703,9 @@
       .app-container {
         max-width: 900px;
         margin: 2rem auto;
+      }
+       .whatsapp-contact {
+        width: 350px;
       }
     }
 
@@ -679,9 +791,41 @@
   <div class="app-container">
     <!-- Header -->
     <header class="header">
-      <h1><i class="fas fa-file-alt"></i>Alisoft Resume Builder</h1>
-      <p>Whatsapp Us for help and supports</p>
-      <a href="wa.me/+923361476464">Whatsapp</a>
+      <div class="header-content">
+        <div class="header-main">
+          <div class="header-title">
+            <h1><i class="fas fa-file-alt"></i>Alisoft Resume Builder</h1>
+          </div>
+        </div>
+        
+        <!-- WhatsApp Contact Section -->
+        <div class="whatsapp-contact">
+          <div class="whatsapp-header">
+            <div class="whatsapp-title">
+              <i class="fab fa-whatsapp"></i>
+              <span>Contact Developer</span>
+            </div>
+            <div class="whatsapp-number">
+              <i class="fas fa-phone"></i>0336-1476464
+            </div>
+          </div>
+          <p style="font-size: 0.8rem; opacity: 0.9; margin-bottom: 0.5rem;">
+            Need help? Chat with me on WhatsApp for support!
+          </p>
+          <div class="whatsapp-actions">
+            <a href="https://wa.me/923361476464?text=Hello!%20I%20need%20help%20with%20Resume%20Builder%20Pro" 
+               class="whatsapp-btn" 
+               target="_blank"
+               onclick="trackWhatsAppClick('chat')">
+              <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+            <a href="tel:+923361476464" 
+               class="whatsapp-btn whatsapp-btn-call">
+              <i class="fas fa-phone"></i> Call Now
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
     <!-- Progress Bar -->
@@ -1910,3 +2054,4 @@
 </body>
 
 </html>
+
